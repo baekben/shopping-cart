@@ -3,26 +3,21 @@ import React, { useState } from 'react';
 const Shop = () => {
 	// const [amount, setAmount] = useState(1);
 	// const [price, setPrice] = useState(0);
-	const [cart, setCart] = useState({});
-
-	// const getIndex = (name) => {
-	// 	for (let i = 0; i < cart.length; i++) {
-	// 		if (cart[i][name] === name) {
-	// 			return i;
-	// 		}
-	// 	}
-	// };
+	const [cart, setCart] = useState([]);
 
 	const addItem = (e) => {
 		let itemName = e.target.id;
-		const itemInfo = {
-			name: itemName,
-			amount: 1,
-		};
-		if (!cart[itemName]) {
-			setCart({ ...cart, [itemName]: itemInfo });
+
+		const { length } = cart;
+		const id = length + 1;
+		const found = cart.some((e) => e.name === itemName);
+		if (!found) {
+			setCart([...cart, { id, name: itemName, amount: 1 }]);
 		} else {
-			cart[itemName].amount++;
+			const updateCart = cart.map((item) => (item.id === id ? { ...item, amount: +1 } : item));
+			setCart(updateCart);
+			// let index = cart.findIndex((x) => x.name === itemName);
+			// cart[index].amount++;
 		}
 	};
 
@@ -43,7 +38,16 @@ const Shop = () => {
 				</ul>
 			</div>
 			<div>
-				<p>Cart: </p>
+				<div>
+					Cart:
+					<ul>
+						{cart.map((e) => (
+							<li key={e.id}>
+								{e.name} | {e.amount}
+							</li>
+						))}
+					</ul>
+				</div>
 				<p>StickBar: </p>
 				<button>Checkout</button>
 			</div>
