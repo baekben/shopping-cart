@@ -18,19 +18,14 @@ const Shop = () => {
 			const length = cart.length;
 			const id = length + 1;
 			if (length === 0) {
-				console.log('cart is zero');
 				setCart([{ id, name: itemName, amount: 1 }]);
 			} else {
-				console.log('not found');
 				setCart([...cart, { id, name: itemName, amount: 1 }]);
 			}
 		} else {
-			console.log('found');
 			const updateCart = cart.map((item) =>
 				item.name === itemName ? { ...item, amount: item.amount + 1 } : item
 			);
-			console.log('updatecart');
-			console.log(updateCart);
 			setCart(updateCart);
 		}
 	};
@@ -50,7 +45,7 @@ const Shop = () => {
 	}, [cart, totalItems]);
 
 	return (
-		<div className="container shop">
+		<div className="shop">
 			<h1>This is the Shop page</h1>
 			<div id="items">
 				<ul>
