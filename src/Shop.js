@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Shop = () => {
 	const [cart, setCart] = useState([]);
 	const [displayCart, setDisplayCart] = useState();
+	const [totalItems, setTotalItems] = useState(0);
 
 	const handleItem = (e) => {
 		addItem(e);
@@ -42,10 +43,14 @@ const Shop = () => {
 				</li>
 			))
 		);
-	}, [cart]);
+		const itemNum = cart.reduce(function (prev, cur) {
+			return prev + cur.amount;
+		}, 0);
+		setTotalItems(itemNum);
+	}, [cart, totalItems]);
 
 	return (
-		<div className="shop">
+		<div className="container shop">
 			<h1>This is the Shop page</h1>
 			<div id="items">
 				<ul>
@@ -62,10 +67,9 @@ const Shop = () => {
 			</div>
 			<div>
 				<div>
-					Cart:
+					Cart: {totalItems}
 					<ul className="cart">{displayCart}</ul>
 				</div>
-				<p>StickBar: </p>
 				<button>Checkout</button>
 			</div>
 		</div>
