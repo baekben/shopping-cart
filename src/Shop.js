@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Cart from './Cart';
+import Item from './Item';
+import products from './Products';
 
 const Shop = () => {
 	const [cart, setCart] = useState([]);
@@ -49,24 +52,18 @@ const Shop = () => {
 			<h1>This is the Shop page</h1>
 			<div id="items">
 				<ul>
-					<li value="1" id="one" onClick={handleItem}>
-						item one
-					</li>
-					<li value="2" id="two" onClick={handleItem}>
-						item two
-					</li>
-					<li value="3" id="three" onClick={handleItem}>
-						item three
-					</li>
+					{products.map((item) => (
+						<Item
+							key={item.id}
+							value={item.value}
+							id={item.id}
+							handleItem={handleItem}
+							name={item.name}
+						/>
+					))}
 				</ul>
 			</div>
-			<div>
-				<div>
-					Cart: {totalItems}
-					<ul className="cart">{displayCart}</ul>
-				</div>
-				<button>Checkout</button>
-			</div>
+			<Cart totalItems={totalItems} displayCart={displayCart} />
 		</div>
 	);
 };
