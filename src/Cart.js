@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Cart = (props) => {
+	const { totalItems, displayCart } = props;
 	return (
 		<div>
 			<div>
-				Cart: {props.totalItems}
-				<ul className="cart">{props.displayCart}</ul>
+				Cart: {totalItems}
+				<ul className="cart">{displayCart}</ul>
 			</div>
 			<button>Checkout</button>
 		</div>
