@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Badge from '@material-ui/core/Badge';
 
-const Nav = () => {
+const Nav = (props) => {
+	const { totalItems } = props;
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<div className="container-fluid">
@@ -20,14 +22,23 @@ const Nav = () => {
 						</Link>
 					</li>
 					<li className="nav-item">
-						<Link className="nav-link " to="#">
+						<Link className="nav-link " to="/about">
 							About{' '}
 						</Link>
 					</li>
 					<li className="nav-item">
-						<Link className="nav-link " to="cart">
-							Cart{' '}
-						</Link>
+						<Badge
+							badgeContent={totalItems}
+							color="primary"
+							anchorOrigin={{
+								vertical: 'bottom',
+								horizontal: 'right',
+							}}
+							showZero>
+							<Link className="nav-link " to="cart">
+								Cart{' '}
+							</Link>
+						</Badge>
 					</li>
 				</ul>
 			</div>

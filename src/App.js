@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
+import About from './About';
 import Shop from './Shop';
 import Nav from './Nav';
 import Cart from './Cart';
@@ -13,7 +14,6 @@ const App = () => {
 
 	const addItem = (e) => {
 		let itemName = e.target.id;
-		console.log(itemName);
 
 		const found = cart.some((e) => e.name === itemName);
 		if (!found) {
@@ -31,6 +31,13 @@ const App = () => {
 			setCart(updateCart);
 		}
 	};
+
+	const clearCart = () => {
+		setCart([]);
+		setDisplayCart();
+		setTotalItems(0);
+	};
+
 	useEffect(() => {
 		setDisplayCart(
 			cart.map((e) => (
@@ -48,14 +55,15 @@ const App = () => {
 		<div className="App">
 			<Router>
 				<div className="container">
-					<Nav />
+					<Nav totalItems={totalItems} />
 					<Switch>
 						<Route exact path="/" component={Home} />
+						<Route exact path="/about" component={About} />
 						<Route exact path="/shop">
 							<Shop addItem={addItem} products={products} cart={cart} />
 						</Route>
 						<Route exact path="/cart">
-							<Cart totalItems={totalItems} displayCart={displayCart} />
+							<Cart totalItems={totalItems} displayCart={displayCart} clearCart={clearCart} />
 						</Route>
 					</Switch>
 				</div>
