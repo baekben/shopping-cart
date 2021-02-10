@@ -15,6 +15,7 @@ const Shop = (props) => {
 							id={item.id}
 							addItem={addItem}
 							name={item.name}
+							image={item.img}
 						/>
 					))}
 				</ul>
