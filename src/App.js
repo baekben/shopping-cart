@@ -6,15 +6,16 @@ import Shop from './Shop';
 import Nav from './Nav';
 import Cart from './Cart';
 import products from './Products';
+import ItemPage from './ItemPage';
 
 const App = () => {
 	const [cart, setCart] = useState([]);
 	const [displayCart, setDisplayCart] = useState();
 	const [totalItems, setTotalItems] = useState(0);
+	const [selected, setSelected] = useState({ id: '', img: '', name: '' });
 
 	const addItem = (e) => {
 		let itemName = e.target.id;
-
 		const found = cart.some((e) => e.name === itemName);
 		if (!found) {
 			const length = cart.length;
@@ -30,6 +31,14 @@ const App = () => {
 			);
 			setCart(updateCart);
 		}
+	};
+
+	const openItem = (e) => {
+		let itemId = e.target.id;
+		console.log(itemId);
+		const itemIndex = products.findIndex((x) => x.id === itemId);
+		console.log(itemIndex);
+		setSelected({ id: itemId, img: products[itemIndex].img, name: products[itemIndex].name });
 	};
 
 	const clearCart = () => {
@@ -60,10 +69,13 @@ const App = () => {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/about" component={About} />
 						<Route exact path="/shop">
-							<Shop addItem={addItem} products={products} cart={cart} />
+							<Shop products={products} cart={cart} openItem={openItem} />
 						</Route>
 						<Route exact path="/cart">
 							<Cart totalItems={totalItems} displayCart={displayCart} clearCart={clearCart} />
+						</Route>
+						<Route exact path="/shop/:itemName">
+							<ItemPage selected={selected} addItem={addItem} />
 						</Route>
 					</Switch>
 				</div>

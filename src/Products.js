@@ -25,7 +25,7 @@ const products = [
 	{
 		id: 'four',
 		value: 4,
-		name: 'White Air Force w/black outer',
+		name: 'White Air Force w/Black Outer',
 		img: whiteSAF,
 	},
 	{

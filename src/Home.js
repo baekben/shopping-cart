@@ -9,7 +9,7 @@ const Home = () => {
 	};
 	return (
 		<div className="home">
-			<h1>This is the Home page</h1>
+			<h1>Fresh Kicks</h1>
 			<button onClick={handleClick} type="button">
 				Go Shop
 			</button>

@@ -1,12 +1,13 @@
 import React from 'react';
+
 import Item from './Item';
 import styles from './Shop.module.css';
 
 const Shop = (props) => {
-	const { addItem, products } = props;
+	const { openItem, products } = props;
 	return (
 		<div className="shop">
-			<h1>This is the Shop page</h1>
+			<h1>Kicks</h1>
 			<div id="items">
 				<ul className={styles.itemBoard}>
 					{products.map((item) => (
@@ -14,7 +15,7 @@ const Shop = (props) => {
 							key={item.id}
 							value={item.value}
 							id={item.id}
-							addItem={addItem}
+							openItem={openItem}
 							name={item.name}
 							image={item.img}
 						/>

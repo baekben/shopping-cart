@@ -1,10 +1,9 @@
-.item{
+.contents{
     text-align: center;
-
 }
 
-.productImg{
-    display: block;
+.itemImg{
+        display: block;
     height: 500px;
     width: 100%;
     object-fit: cover;
