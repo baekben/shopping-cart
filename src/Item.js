@@ -1,16 +1,16 @@
 import React from 'react';
+import styles from './Item.module.css';
 
 const Item = (props) => {
 	return (
-		<li value={props.value} id={props.id} onClick={props.addItem}>
+		<li className={styles.item} value={props.value} id={props.id} onClick={props.addItem}>
 			<img
-				className="img-fluid productImg"
+				className="img-fluid img-thumbnail productImg"
 				src={props.image}
 				alt={props.id}
-				width="200"
-				height="100"
+				max-height="100"
 			/>
-			{props.name}
+			<p>{props.name}</p>
 		</li>
 	);
 };
