@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import styles from './Home.module.css';
 
 const Home = () => {
 	const history = useHistory();
@@ -8,9 +9,9 @@ const Home = () => {
 		history.push('/shop');
 	};
 	return (
-		<div className="home">
-			<h1>Fresh Kicks</h1>
-			<button onClick={handleClick} type="button">
+		<div className={styles.home}>
+			<p className={styles.header}>Fresh Kicks</p>
+			<button className="btn btn-secondary btn-lg " onClick={handleClick} type="button">
 				Go Shop
 			</button>
 		</div>

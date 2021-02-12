@@ -12,7 +12,7 @@ const App = () => {
 	const [cart, setCart] = useState([]);
 	const [displayCart, setDisplayCart] = useState();
 	const [totalItems, setTotalItems] = useState(0);
-	const [selected, setSelected] = useState({ id: '', img: '', name: '' });
+	const [selected, setSelected] = useState({ id: '', img: '', name: '', desc: '' });
 
 	const addItem = (e) => {
 		let itemName = e.target.id;
@@ -35,10 +35,13 @@ const App = () => {
 
 	const openItem = (e) => {
 		let itemId = e.target.id;
-		console.log(itemId);
 		const itemIndex = products.findIndex((x) => x.id === itemId);
-		console.log(itemIndex);
-		setSelected({ id: itemId, img: products[itemIndex].img, name: products[itemIndex].name });
+		setSelected({
+			id: itemId,
+			img: products[itemIndex].img,
+			name: products[itemIndex].name,
+			desc: products[itemIndex].desc,
+		});
 	};
 
 	const clearCart = () => {

@@ -23,7 +23,7 @@ const Nav = (props) => {
 					</li>
 					<li className="nav-item">
 						<Link className="nav-link " to="/about">
-							About{' '}
+							About
 						</Link>
 					</li>
 					<li className="nav-item">
@@ -36,7 +36,7 @@ const Nav = (props) => {
 							}}
 							showZero>
 							<Link className="nav-link " to="cart">
-								Cart{' '}
+								Cart
 							</Link>
 						</Badge>
 					</li>

@@ -9,30 +9,35 @@ const products = [
 		value: 1,
 		name: 'Free Run Nike',
 		img: freeRn,
+		desc: 'Light weight red running shoe from Nike',
 	},
 	{
 		id: 'two',
 		value: 2,
 		name: 'Pastel Air Force Nike',
 		img: pastelNike,
+		desc: "Classic Air Force 1's in a pastel colorway",
 	},
 	{
 		id: 'three',
 		value: 3,
 		name: 'Pastel New Balance',
 		img: pastelNB,
+		desc: 'Pastel colorway from New Balance',
 	},
 	{
 		id: 'four',
 		value: 4,
 		name: 'White Air Force w/Black Outer',
 		img: whiteSAF,
+		desc: "Air Force 1's with some black and red mixed in",
 	},
 	{
 		id: 'five',
 		value: 5,
 		name: 'Jordan 1 (Yellow/Black)',
 		img: ybNike,
+		desc: "Jordan 1's in a yellow and black colorway",
 	},
 ];
 
