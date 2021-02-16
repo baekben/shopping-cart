@@ -85,6 +85,14 @@ const App = () => {
 					</Switch>
 				</div>
 			</Router>
+			<footer className="footer mt-auto py-3 bg-light">
+				<div className="container">
+					<div className="row">
+						<div className="col-sm">"These prices are not accurate with current market values"</div>
+						<div className="col-sm">2021 Fresh Kicks</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 	);
 };
