@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.4692dc92.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.f7e49703.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.f7e49703.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.b56c1ee8.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b56c1ee8.js.map",
+    "static/js/2.8a44f6c4.chunk.js": "/shopping-cart/static/js/2.8a44f6c4.chunk.js",
+    "static/js/2.8a44f6c4.chunk.js.map": "/shopping-cart/static/js/2.8a44f6c4.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.4692dc92.chunk.css.map": "/shopping-cart/static/css/main.4692dc92.chunk.css.map",
+    "static/js/2.8a44f6c4.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.8a44f6c4.chunk.js.LICENSE.txt",
+    "static/media/Home.module.css": "/shopping-cart/static/media/bgShoes.7d505360.jpg",
+    "static/media/freeRunNike.44269788.jpg": "/shopping-cart/static/media/freeRunNike.44269788.jpg",
+    "static/media/hangingShoes.d852320d.jpg": "/shopping-cart/static/media/hangingShoes.d852320d.jpg",
+    "static/media/pastelAirForceNike.dc010657.jpg": "/shopping-cart/static/media/pastelAirForceNike.dc010657.jpg",
+    "static/media/pastelNewBalance.c7e91bc7.jpg": "/shopping-cart/static/media/pastelNewBalance.c7e91bc7.jpg",
+    "static/media/streetpic.5e0b687b.jpg": "/shopping-cart/static/media/streetpic.5e0b687b.jpg",
+    "static/media/whiteswooshAFNike.8aa9b938.jpg": "/shopping-cart/static/media/whiteswooshAFNike.8aa9b938.jpg",
+    "static/media/yellow+blackNike.7dabbca8.jpg": "/shopping-cart/static/media/yellow+blackNike.7dabbca8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b56c1ee8.js",
+    "static/js/2.8a44f6c4.chunk.js",
+    "static/css/main.4692dc92.chunk.css",
+    "static/js/main.f7e49703.chunk.js"
+  ]
+}
