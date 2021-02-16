@@ -27,8 +27,8 @@ const Nav = (props) => {
 						</Link>
 					</li>
 					<li className="nav-item">
-						<Link className="nav-link" to="cart">
-							<Badge badgeContent={totalItems} color="primary" showZero>
+						<Link className="nav-link" to="/cart">
+							<Badge badgeContent={totalItems} color="primary">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="32"

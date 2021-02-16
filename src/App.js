@@ -14,21 +14,21 @@ const App = () => {
 	const [totalItems, setTotalItems] = useState(0);
 	const [selected, setSelected] = useState({ id: '', img: '', name: '', desc: '' });
 
-	const addItem = (e) => {
+	const addItem = (e, qty) => {
 		let itemName = e.target.id;
-		console.log(itemName);
 		const found = cart.some((e) => e.name === itemName);
 		if (!found) {
 			const length = cart.length;
 			const id = length + 1;
+
 			if (length === 0) {
-				setCart([{ id, name: itemName, amount: 1 }]);
+				setCart([{ id, name: itemName, amount: qty }]);
 			} else {
-				setCart([...cart, { id, name: itemName, amount: 1 }]);
+				setCart([...cart, { id, name: itemName, amount: qty }]);
 			}
 		} else {
 			const updateCart = cart.map((item) =>
-				item.name === itemName ? { ...item, amount: item.amount + 1 } : item
+				item.name === itemName ? { ...item, amount: item.amount + qty } : item
 			);
 			setCart(updateCart);
 		}
@@ -63,7 +63,6 @@ const App = () => {
 			return prev + cur.amount;
 		}, 0);
 		setTotalItems(itemNum);
-		console.log(cart);
 	}, [cart, totalItems]);
 	return (
 		<div className="App">
