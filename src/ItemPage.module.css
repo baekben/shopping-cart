@@ -1,9 +1,7 @@
-.contents{
-    text-align: center;
-}
+
 
 .itemImg{
-        display: block;
+    display: block;
     height: 500px;
     width: 100%;
     object-fit: cover;

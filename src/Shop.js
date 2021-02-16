@@ -18,6 +18,7 @@ const Shop = (props) => {
 							openItem={openItem}
 							name={item.name}
 							image={item.img}
+							price={item.price}
 						/>
 					))}
 				</ul>

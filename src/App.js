@@ -16,6 +16,7 @@ const App = () => {
 
 	const addItem = (e) => {
 		let itemName = e.target.id;
+		console.log(itemName);
 		const found = cart.some((e) => e.name === itemName);
 		if (!found) {
 			const length = cart.length;
@@ -62,6 +63,7 @@ const App = () => {
 			return prev + cur.amount;
 		}, 0);
 		setTotalItems(itemNum);
+		console.log(cart);
 	}, [cart, totalItems]);
 	return (
 		<div className="App">
